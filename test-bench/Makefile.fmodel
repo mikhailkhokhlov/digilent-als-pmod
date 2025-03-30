@@ -1,0 +1,15 @@
+CC = iverilog
+FLAGS = -Wall
+SIM=vvp
+WAVEVIEWER=gtkwave
+
+SRC=als-functinal-model.v
+OUT = model.out
+
+model_test: $(SRC)
+	@$(CC) $(FLAGS) -o $(OUT) -s als_fmodel_tb $(SRC)
+	@$(SIM) $(OUT)
+	@$(WAVEVIEWER) als_fmodel.vcd
+
+clean:
+	rm -vf $(OUT) *.vcd
