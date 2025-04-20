@@ -1,0 +1,4 @@
+zybo-z7-als-pmod.*
+vivado.*
+*.out
+*.vcd
